@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
+using System.IO;
 
 namespace Raven_Queens_Crown
 {
@@ -10,23 +11,18 @@ namespace Raven_Queens_Crown
     {
         static void Main(string[] args)
         {
-            string answer = "";
+            //string answer = "";
 
-            answer = Console.ReadLine();
+            //answer = Console.ReadLine();
 
-            while (answer != "9999")
-            {                
+            //while (answer != "9999")
+            //{                
                 Volcano();
-                answer = Console.ReadLine();
-                Forest();
-                answer = Console.ReadLine();
-                Castle();
-                answer = Console.ReadLine();
-                Mountain();
-                answer = Console.ReadLine();
-                Desert();
-                answer = Console.ReadLine();
-            } 
+                //Forest();
+                //Castle();
+                //Mountain();
+                //Desert();
+            //} 
         }
 
 
@@ -52,10 +48,26 @@ namespace Raven_Queens_Crown
 
         public static void Volcano()
         {
-            Console.WriteLine("hi");
+            //Console.WriteLine("\nYou have finally found yourself at the entrance of Mount Doom, the only active volcano in (NAME OF PLACE)");
+            //Console.WriteLine("Inside, you see a bridge that spans across a pit of molten hot lava.");
+            //Console.WriteLine("On the other end of the bridge, you notice a sword, gleaming and blinding.");
 
+            StreamReader sr = new StreamReader(@"C:\Users\mfada\Desktop\Raven-Queens-Crown\Raven Queens Crown\Faizel's Info\Story.txt");
 
+            string questions;
 
+            string sentence = "";
+
+            questions = sr.ReadToEnd();
+
+            foreach (char display in questions)
+            {
+                Thread.Sleep(75);
+                Console.Write(display);
+            }
+
+            //Console.WriteLine(sentence.TrimEnd());
+            Console.ReadLine();
 
 
 
