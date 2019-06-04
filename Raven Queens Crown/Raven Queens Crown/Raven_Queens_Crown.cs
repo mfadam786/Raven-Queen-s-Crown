@@ -256,6 +256,48 @@ namespace Raven_Queens_Crown
         public static void Castle()
         {
 
+            //Objective of the game is to find the crown
+
+            Console.WriteLine("You have reached the outskirts of a Castle to enter press \'e\'");
+            char outskirts = Convert.ToChar(Console.ReadLine());
+
+            if (outskirts == 'e')
+            {
+                Console.WriteLine("You enter the Castle passing a sign saying \"Castle Luna\" " +
+                    "it is dark inside to your left is a torch to grab the torch press \'k\'");
+                char torch = Convert.ToChar(Console.ReadLine());
+
+                if (torch == 'k')
+                {
+                    Console.WriteLine("You picked up the torch");
+                }
+
+                Console.WriteLine("\nTo your left are some poison darts to pick them up press \'p\'");
+                string poison = Console.ReadLine();
+
+                if (poison == "p")
+                {
+                    string inventory = poison;
+                    Console.WriteLine("You pick up the poison darts, they are now added to your inventory, to throw press \'t\'");
+                }
+
+                //if user moves forward
+                Console.WriteLine("A cat bounds forward");
+                char cat = Convert.ToChar(Console.ReadLine());
+                if (cat == 't')
+                {
+                    Console.WriteLine("You threw poison darts at the cat, its a direct hit");
+                    Console.ReadLine();
+                }
+                else
+                {
+                    Console.WriteLine("You died");
+                    Console.ReadLine();
+                }
+
+            }
+
+
 
 
 
