@@ -20,28 +20,43 @@ namespace Raven_Queens_Crown
             Console.WriteLine("You are standing in a busy street in *Base Point*, you must find The Raven Queens Crown. To travel north to the volcano to the press \'n\' To check the Mountain in the west press \'w' " +
                 "To search the southern forest press \'s\' To plunder the eastern castle press \'e\' ");
             string direction = Console.ReadLine();
-            switch (direction)
+                Intro();
+            //switch (direction.ToLower())
+            //{
+
+
+            //        //Desert();
+            //        //} 
+            //}
+
+            //Console.WriteLine("You have found the Raven Queens Crown it was in {place}");
+        }
+
+        public static void Intro()
         {
+            Console.WriteLine("You are standing in a busy street in *Base Point*, you must find The Raven Queens Crown. To travel north to the volcano to the press \'n\' To check the Mountain in the west press \'w' " +
+            "To search the southern forest press \'s\' To plunder the eastern castle press \'e\' ");
+            string direction = Console.ReadLine();
+            switch (direction.ToLower())
+            {
                 case "n":
                     Volcano();
+                    Intro();
                     break;
                 case "w":
                     Mountain();
+                    Intro();
                     break;
                 case "s":
                     Forest();
+                    Intro();
                     break;
                 case "e":
                     Castle();
+                    Intro();
                     break;
-           
-            
-            //Desert();
-            //} 
+            }
         }
-        }
-        
-
 
 
 
@@ -568,5 +583,6 @@ namespace Raven_Queens_Crown
 
 
         }
+        
     }
 }
