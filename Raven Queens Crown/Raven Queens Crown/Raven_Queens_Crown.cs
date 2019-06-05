@@ -178,61 +178,107 @@ namespace Raven_Queens_Crown
 
         public static void Forest()
         {
+            Console.WriteLine($"You are on the edge of Barewood Forrest.\n");
 
+            //Console.WriteLine($"In the distance you see a slight movment.");
+            //Console.ReadLine();
 
+            Console.WriteLine($"Do you enter the forrest");
+            string enterForrest = Console.ReadLine();
+            enterForrest = enterForrest.ToLower();
+            if (enterForrest == "yes")
+            {
+                Console.WriteLine($"\nAll areound you are Barkless Trees, they streatch up as if to cover the sky.\n");
+                Console.WriteLine($"As you enter the Forrest your eye catches see a slight movment in the distance in front of you");
+                Console.WriteLine("Do you go foward?\n");
+                string foward = Console.ReadLine();
+                if (foward.ToLower() == "yes")
+                {
+                    Console.Clear();
+                    Console.WriteLine("\nAs you approch, it is reveled to be a elf.\n");
+                    Console.WriteLine("Possibly of WoodElf decent as he is earthy in apparence. With light brown hair on light skin and green robes to match vibrant green eyes");
+                    Console.WriteLine("He greets you warmly.Closer you see that the elf seems old in age.\n");
 
+                    Console.WriteLine("He Speacks to you\n[ENTER]");
+                    Console.ReadLine();
 
+                    Console.ForegroundColor = ConsoleColor.DarkGreen;
+                    Console.WriteLine("Hello! What are you up to in the forrest?\n");
 
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.WriteLine("Hi, I am here looking for a missing item. I hered that the cultprate could have been seen in this area.\n");
 
+                    Console.ForegroundColor = ConsoleColor.DarkGreen;
+                    Console.WriteLine("Oh, \nI feel I remeber seeing another new face like yourself just a few days ago.");
+                    Console.WriteLine("I think he was somewhere on the West of the forrest");
 
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.WriteLine("\nThank you for that information, goodbye!");
 
+                    Console.ForegroundColor = ConsoleColor.DarkGreen;
+                    Console.WriteLine("\nGoodBye");
 
+                    Console.WriteLine("[ENTER]");
+                    Console.ReadLine();
 
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.WriteLine("You are now by yourself in the middle of the forrest.");
+                    Console.WriteLine("What direction do you want to go?\n");
+                    Console.WriteLine("[n] North");
+                    Console.WriteLine("[e] East");
+                    Console.WriteLine("[s] South");
+                    Console.WriteLine("[w] West");
+                    Console.Write("Your Direction?: ");
+                    string way = Console.ReadLine();
 
+                    switch (way.ToLower())
+                    {
+                        case "n":
+                            Console.WriteLine("You North and are sorrounded by more trees");
+                            break;
+                        case "e":
+                            Console.WriteLine("You East and are sorrounded by more trees");
+                            break;
+                        case "s":
+                            Console.WriteLine("You South and are sorrounded by more trees");
+                            break;
+                        case "w":
+                            Console.WriteLine("By a sinkHole with vines");
+                            break;
 
+                    }
+                }
+                else if (foward.ToLower() == "no" || foward.ToLower() == "")
+                {
+                    Console.WriteLine("Where do you want to go?");
 
+                }
+            }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            else
+            {
+                Console.WriteLine("Honey, why are you here then");
+            }
+            Console.ReadLine();
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
 
 
 
