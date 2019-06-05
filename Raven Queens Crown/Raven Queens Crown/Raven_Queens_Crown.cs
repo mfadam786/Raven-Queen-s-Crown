@@ -16,15 +16,31 @@ namespace Raven_Queens_Crown
             //answer = Console.ReadLine();
 
             //while (answer != "9999")
-            //{                
-                Volcano();
-                //Forest();
-                //Castle();
-                //Mountain();
-                //Desert();
+
+            Console.WriteLine("You are standing in a busy street in *Base Point*, you must find The Raven Queens Crown. To travel north to the volcano to the press \'n\' To check the Mountain in the west press \'w' " +
+                "To search the southern forest press \'s\' To plunder the eastern castle press \'e\' ");
+            string direction = Console.ReadLine();
+            switch (direction)
+        {
+                case "n":
+                    Volcano();
+                    break;
+                case "w":
+                    Mountain();
+                    break;
+                case "s":
+                    Forest();
+                    break;
+                case "e":
+                    Castle();
+                    break;
+           
+            
+            //Desert();
             //} 
         }
-
+        }
+        
 
 
 
@@ -52,7 +68,7 @@ namespace Raven_Queens_Crown
             //Console.WriteLine("Inside, you see a bridge that spans across a pit of molten hot lava.");
             //Console.WriteLine("On the other end of the bridge, you notice a sword, gleaming and blinding.");
 
-            StreamReader sr = new StreamReader(@"C:\Users\mfada\Desktop\Raven-Queens-Crown\Raven Queens Crown\Faizel's Info\Story.txt");
+            StreamReader sr = new StreamReader(@"H:\Professional Practice\Raven-Queens-Crown\Raven Queens Crown\Faizel's Info\Story.txt");
 
             string questions;
 
@@ -278,13 +294,13 @@ namespace Raven_Queens_Crown
                 if (poison == "p")
                 {
                     string inventory = poison;
-                    Console.WriteLine("You pick up the poison darts, they are now added to your inventory, to throw press \'t\'");
+                    Console.WriteLine("You pick up the poison darts, they are now added to your inventory, to throw press \'p\'");
                 }
 
                 //if user moves forward
                 Console.WriteLine("A cat bounds forward");
                 char cat = Convert.ToChar(Console.ReadLine());
-                if (cat == 't')
+                if (cat == 'p')
                 {
                     Console.WriteLine("You threw poison darts at the cat, its a direct hit");
                     Console.ReadLine();
