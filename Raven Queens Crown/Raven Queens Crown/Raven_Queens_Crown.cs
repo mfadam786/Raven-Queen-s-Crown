@@ -335,19 +335,24 @@ namespace Raven_Queens_Crown
 
             //Objective of the game is to find the crown
 
-            Console.WriteLine("You have reached the outskirts of a Castle to enter press \'e\'");
+            Console.WriteLine("You have reached the outskirts of a Castle. /nDo you want to a)Explore the castle in search of the crown /nb)Search the grounds");
             char outskirts = Convert.ToChar(Console.ReadLine());
 
-            if (outskirts == 'e')
+            if (outskirts == 'a')
             {
-                Console.WriteLine("You enter the Castle passing a sign saying \"Castle Luna\" " +
-                    "it is dark inside to your left is a torch to grab the torch press \'k\'");
+                Console.WriteLine("You enter the Castle " +
+                    "it is dark inside to your left is a torch to grab the torch press \'t\' to ignore the torch and carry on walking press \'w\'");
                 char torch = Convert.ToChar(Console.ReadLine());
 
-                if (torch == 'k')
+                if (torch == 'b')
                 {
                     Console.WriteLine("You picked up the torch");
                 }
+            else
+            {
+                Console.WriteLine("To your left is staircase that leads down to what looks like a celler, to your right is a staircase that leads upwards");
+                Console.WriteLine("Do you want to /na) Walk down the stairs to the celler /nb)Walks up the stairs");
+            }
 
                 Console.WriteLine("\nTo your left are some poison darts to pick them up press \'p\'");
                 string poison = Console.ReadLine();
