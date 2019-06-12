@@ -26,125 +26,6 @@ namespace Raven_Queens_Crown
         }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        public static void Volcano()
-        {
-            //Console.WriteLine("\nYou have finally found yourself at the entrance of Mount Doom, the only active volcano in (NAME OF PLACE)");
-            //Console.WriteLine("Inside, you see a bridge that spans across a pit of molten hot lava.");
-            //Console.WriteLine("On the other end of the bridge, you notice a sword, gleaming and blinding.");
-
-            StreamReader sr = new StreamReader(@"C:\Users\mfada\Desktop\Raven-Queens-Crown\Raven Queens Crown\Faizel's Info\Story.txt");
-
-            string questions;
-
-            string sentence = "";
-
-            questions = sr.ReadToEnd();
-
-            foreach (char display in questions)
-            {
-                Thread.Sleep(75);
-                Console.Write(display);
-            }
-
-            //Console.WriteLine(sentence.TrimEnd());
-            Console.ReadLine();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         public static void Forest()
         {
 
@@ -510,5 +391,128 @@ namespace Raven_Queens_Crown
 
 
         }
+
+
+
+H:\Muhammed Faizel Adam (100065402)\BIT-Year-1\Raven-Queens-Crown\Raven Queens Crown\Faizel's Info
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        public static void Volcano()
+        {
+            int countStory = 0, countInventory = 0;
+
+            StreamReader story = new StreamReader(@"H:\Raven-Queens-Crown\Raven Queens Crown\Faizel's Info\Story.txt");
+            StreamReader store = new StreamReader(@"H:\Raven-Queens-Crown\Raven Queens Crown\Faizel's Info\Store in Inventory.txt");
+
+
+            string storyLine, useInventory, storeInventory, use = "Use";
+
+            storyLine = story.ReadToEnd();
+            storeInventory = store.ReadToEnd();
+
+            string[] storyLines = storyLine.Split('-');
+            string[] inventory = storeInventory.Split(',');
+            
+            foreach (char displayStoryLine in storyLines[countStory])
+            {
+                Thread.Sleep(25);
+                Console.Write(displayStoryLine);
+            }           
+            
+            countStory++;
+
+            string answer = Console.ReadLine();
+
+            answer = answer.Replace(',' , ' ');
+
+            string[] answerCheck = answer.Split(' ');
+
+            foreach (string user in answerCheck)
+            {
+                foreach (string pick in inventory)
+                {
+                    if (user == pick)
+                    {
+
+                    }
+                }
+            }
+            
+            
+
+
+            /*
+            foreach (char display in question)
+            {
+                Thread.Sleep(75);
+                Console.Write(display);
+            }
+
+            //Console.WriteLine(sentence.TrimEnd());*/
+            Console.ReadLine();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        }
+
+        public static void Inventory()
+        {
+            string[] inventory = new string[4];
+
+
+        }
     }
-}
+

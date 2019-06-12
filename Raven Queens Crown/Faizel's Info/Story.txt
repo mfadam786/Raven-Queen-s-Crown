@@ -1,3 +1,9 @@
 You have finally found yourself at the entrance of Mount Doom, the only active volcano in (NAME OF PLACE).
 Inside, you see a bridge that spans across a pit of molten hot lava.
 On the other end of the bridge, you notice a sword, gleaming and blinding.
+There is a vile of potion on the other side of the bridge.
+
+What do you want to do?
+-
+
+
