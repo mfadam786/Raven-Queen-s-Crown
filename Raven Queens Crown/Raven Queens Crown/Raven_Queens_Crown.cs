@@ -418,56 +418,98 @@ namespace Raven_Queens_Crown
 
         public static void Volcano()
         {
-            int countStory = 0, countInventory = 0;
+            //int countStory = 0, countInventory = 0;
 
-            StreamReader story = new StreamReader(@"H:\Raven-Queens-Crown\Raven Queens Crown\Faizel's Info\Story.txt");
-            StreamReader store = new StreamReader(@"H:\Raven-Queens-Crown\Raven Queens Crown\Faizel's Info\Store in Inventory.txt");
+            //StreamReader story = new StreamReader(@"H:\Raven-Queens-Crown\Raven Queens Crown\Faizel's Info\Story.txt");
+            //StreamReader store = new StreamReader(@"H:\Raven-Queens-Crown\Raven Queens Crown\Faizel's Info\Store in Inventory.txt");
+            //string storyLine, useInventory, storeInventory, use = "Use";
+            //storyLine = story.ReadToEnd();
+            //storeInventory = store.ReadToEnd();
+            //string[] storyLines = storyLine.Split('-');
+            //string[] inventory = storeInventory.Split(',');
+            //foreach (char displayStoryLine in storyLines[countStory])
+            //{
+            //    Thread.Sleep(25);
+            //    Console.Write(displayStoryLine);
+            //}
+            //countStory++;
+            //string answer = Console.ReadLine();
+            //answer = answer.Replace(',', ' ');
+            //string[] answerCheck = answer.Split(' ');
+            //foreach (string user in answerCheck)
+            //{
+            //    foreach (string pick in inventory)
+            //    {
+            //        if (user == pick)
+            //        {
+
+            //        }
+            //    }
+            //}
+
+            ///*
+            //foreach (char display in question)
+            //{
+            //    Thread.Sleep(75);
+            //    Console.Write(display);
+            //}
+
+            ////Console.WriteLine(sentence.TrimEnd());*/
+            //Console.ReadLine();
 
 
-            string storyLine, useInventory, storeInventory, use = "Use";
+            string path;
+            Console.WriteLine("You have entered the volcano Territory");
+            Console.WriteLine("Infront of you there are 3 bridges conecting your land to an unknown location. As the ash from the volcano is blocking your view to the other side.");
+            Console.WriteLine("One of them has to lead to the volcano, right?!");
+            Console.WriteLine("The bridges look raggedy and old as the wood is slightly rotted. But the Iron linking them looks secure.");
+            Console.WriteLine("The bridge chooices are as followed: \nThe first one is at the far right, in the distance it seems to vear to the right.");
+            Console.WriteLine("The Second is in the middle and also vears to the right");
+            Console.WriteLine("Where as the third bridge seems to be going straght towards the volcano.");
+            Console.ReadLine();
+            Console.Write("Do you choose bridge 1, 2 or 3: ");
+            path = Console.ReadLine();
 
-            storyLine = story.ReadToEnd();
-            storeInventory = store.ReadToEnd();
-
-            string[] storyLines = storyLine.Split('-');
-            string[] inventory = storeInventory.Split(',');
-
-            foreach (char displayStoryLine in storyLines[countStory])
+            if (path == "3")
             {
-                Thread.Sleep(25);
-                Console.Write(displayStoryLine);
-            }
-
-            countStory++;
-
-            string answer = Console.ReadLine();
-
-            answer = answer.Replace(',', ' ');
-
-            string[] answerCheck = answer.Split(' ');
-
-            foreach (string user in answerCheck)
-            {
-                foreach (string pick in inventory)
+                Console.WriteLine("You chose correctly! You have reached the volcano.");
+                Console.WriteLine("you cross the bridge and you see a path that leads to a ricketty shack.");
+                Console.WriteLine("[ENTER]");
+                //Console.ReadLine();
+                Console.Write("Do you approach the scack");
+                string shack = Console.ReadLine();
+                bool enterShack = false;
+                if (shack.ToLower() == "no")
                 {
-                    if (user == pick)
-                    {
+                    enterShack = false;
+                }
+                while (enterShack == false)
+                {
 
+                    if (shack.ToLower() == "no")
+                    {
+                        Console.WriteLine("Isnt this your only Lead?");
+                        Console.Write("Do you approach the scack: ");
+                        shack = Console.ReadLine();
+
+                    }
+                    else
+                    {
+                        Console.WriteLine("enter shack");
+                        enterShack = true;
                     }
                 }
             }
 
-
-
-
-            /*
-            foreach (char display in question)
+            if (path == "2")
             {
-                Thread.Sleep(75);
-                Console.Write(display);
+                Console.WriteLine("You Dye");
             }
 
-            //Console.WriteLine(sentence.TrimEnd());*/
+            if (path == "1")
+            {
+                Console.WriteLine("You Dye");
+            }
             Console.ReadLine();
 
 
@@ -556,7 +598,6 @@ namespace Raven_Queens_Crown
                             Console.WriteLine(position[0]);
                             Console.WriteLine("");
                         }
-
                         break;
 
                     case "s":
@@ -859,5 +900,5 @@ namespace Raven_Queens_Crown
             Console.WriteLine("\nPress enter to continue\n");
             Console.ReadLine();
         }
-    }   
-}
+    }
+}    
