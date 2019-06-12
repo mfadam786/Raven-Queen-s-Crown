@@ -11,47 +11,20 @@ namespace Raven_Queens_Crown
     {
         static void Main(string[] args)
         {
-            //string answer = "";
+            string[] inventory = new string[5] { "Empty", "Empty", "Empty", "Empty", "Empty" };
 
-            //answer = Console.ReadLine();
-
-            //while (answer != "9999")
-
-            Console.WriteLine("You are standing in a busy street in *Base Point*, you must find The Raven Queens Crown. To travel north to the volcano to the press \'n\' To check the Mountain in the west press \'w' " +
-                "To search the southern forest press \'s\' To plunder the eastern castle press \'e\' ");
-            string direction = Console.ReadLine();
             Intro();
-            //switch (direction.ToLower())
-            //{
 
+            Game(inventory);
         }
 
 
         public static void Intro()
         {
-            Console.WriteLine("You are standing in a busy street in *Base Point*, you must find The Raven Queens Crown. To travel north to the volcano to the press \'n\' To check the Mountain in the west press \'w' " +
-            "To search the southern forest press \'s\' To plunder the eastern castle press \'e\' ");
-            string direction = Console.ReadLine();
-            switch (direction.ToLower())
-            {
-                case "n":
-                    Volcano();
-                    Intro();
-                    break;
-                case "w":
-                    Mountain();
-                    Intro();
-                    break;
-                case "s":
-                    Forest();
-                    Intro();
-                    break;
-                case "e":
-                    Castle();
-                    Intro();
-                    break;
-            }
-            StreamReader sr = new StreamReader(@"H:\Professional Practice\Raven-Queens-Crown\Raven Queens Crown\Faizel's Info\Story.txt");
+            /*Console.WriteLine("You are standing in a busy street in *Base Point*, you must find The Raven Queens Crown. To travel north to the volcano to the press \'n\' To check the Mountain in the west press \'w' " +
+            "To search the southern forest press \'s\' To plunder the eastern castle press \'e\' ");*/
+
+            Console.WriteLine("\nYou are standing in a busy street in *Base Point*, you must find The Raven Queens Crown.\n");
         }
 
         public static void Forest()
@@ -524,56 +497,367 @@ namespace Raven_Queens_Crown
 
 
 
-        }        
+        }
+
+        public static void Game(string[] inventory)
+        {
+            int[,] map = new int[5, 5] { { 1, 2, 3, 4, 5 }, { 6, 7, 8, 9, 10 }, { 11, 12, 13, 14, 15 }, { 16, 17, 18, 19, 20 }, { 21, 22, 23, 24, 25 } };
+            int[] position = new int[1];
+            int[] check = new int[1];
+            int x = 2, y = 2;
+            bool exit = false;
+
+            string input;
+
+            position[0] = map[2, 2];
+
+            Console.WriteLine("\nn - NORTH\ns - SOUTH\ne - EAST\nw - WEST\n\ni - INVENTORY\n\nq - QUIT\n");
+            Console.WriteLine($"\n{x} , {y}\n");
+            Console.WriteLine(position[0]);
+            Console.WriteLine("");
+            input = Console.ReadLine().ToLower();
+
+            while (exit == false)
+            {
+                Console.Clear();
+
+                switch (input)
+                {
+                    case "n":
+
+                        check[0] = position[0] - map[0, 4];
+
+                        if ((check[0] == map[0, 1]) || (check[0] == map[0, 2]) || (check[0] == map[0, 3]))
+                        {
+                            Console.ForegroundColor = ConsoleColor.White;
+                            Console.WriteLine($"\n{x} , {y}\n");
+                            Console.WriteLine(position[0]);
+                            Console.WriteLine("");
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("\nYou cannot go there\n");
+
+                            break;
+                        }
+
+                        else
+                        {
+                            position[0] = position[0] - map[0, 4];
+                            check[0] = position[0];
+                            x = x + 0;
+                            y = y + 1;
+
+                            CheckPosition(position, map, input, inventory);
+
+                            Console.Clear();
+
+                            Console.ForegroundColor = ConsoleColor.White;
+                            Console.WriteLine("\nn - NORTH\ns - SOUTH\ne - EAST\nw - WEST\n\ni - INVENTORY\n\nq - QUIT\n");
+                            Console.WriteLine($"\n{x} , {y}\n");
+                            Console.WriteLine(position[0]);
+                            Console.WriteLine("");
+                        }
+
+                        break;
+
+                    case "s":
+
+                        check[0] = position[0] + map[0, 4];
+
+                        if ((check[0] == map[4, 1]) || (check[0] == map[4, 2]) || (check[0] == map[4, 3]))
+                        {
+                            Console.ForegroundColor = ConsoleColor.White;
+                            Console.WriteLine($"\n{x} , {y}\n");
+                            Console.WriteLine(position[0]);
+                            Console.WriteLine("");
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("\nYou cannot go there\n");
+
+                            break;
+                        }
+
+                        else
+                        {
+                            position[0] = position[0] + map[0, 4];
+                            check[0] = position[0];
+                            x = x + 0;
+                            y = y - 1;
+
+                            CheckPosition(position, map, input, inventory);
+
+                            Console.Clear();
+
+                            Console.ForegroundColor = ConsoleColor.White;
+                            Console.WriteLine("\nn - NORTH\ns - SOUTH\ne - EAST\nw - WEST\n\ni - INVENTORY\n\nq - QUIT\n");
+                            Console.WriteLine($"\n{x} , {y}\n");
+                            Console.WriteLine(position[0]);
+                            Console.WriteLine("");
+                        }
+
+                        break;
+
+                    case "w":
+
+                        check[0] = position[0] - map[0, 0];
+
+                        if ((check[0] == map[1, 0]) || (check[0] == map[2, 0]) || (check[0] == map[3, 0]))
+                        {
+                            Console.ForegroundColor = ConsoleColor.White;
+                            Console.WriteLine($"\n{x} , {y}\n");
+                            Console.WriteLine(position[0]);
+                            Console.WriteLine("");
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("\nYou cannot go there\n");
+
+                            break;
+                        }
+
+                        else
+                        {
+                            position[0] = position[0] - map[0, 0];
+                            check[0] = position[0];
+                            x = x - 1;
+                            y = y + 0;
+
+                            CheckPosition(position, map, input, inventory);
+
+                            Console.Clear();
+
+                            Console.ForegroundColor = ConsoleColor.White;
+                            Console.WriteLine("\nn - NORTH\ns - SOUTH\ne - EAST\nw - WEST\n\ni - INVENTORY\n\nq - QUIT\n");
+                            Console.WriteLine($"\n{x} , {y}\n");
+                            Console.WriteLine(position[0]);
+                            Console.WriteLine("");
+                        }
+
+                        break;
+
+                    case "e":
+
+                        check[0] = position[0] + map[0, 0];
+
+                        if ((check[0] == map[1, 4]) || (check[0] == map[2, 4]) || (check[0] == map[3, 4]))
+                        {
+                            Console.ForegroundColor = ConsoleColor.White;
+                            Console.WriteLine($"\n{x} , {y}\n");
+                            Console.WriteLine(position[0]);
+                            Console.WriteLine("");
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("\nYou cannot go there\n");
+
+                            break;
+                        }
+
+                        else
+                        {
+                            position[0] = position[0] + map[0, 0];
+                            check[0] = position[0];
+                            x = x + 1;
+                            y = y + 0;
+
+                            CheckPosition(position, map, input, inventory);
+
+                            Console.Clear();
+
+                            Console.ForegroundColor = ConsoleColor.White;
+                            Console.WriteLine("\nn - NORTH\ns - SOUTH\ne - EAST\nw - WEST\n\ni - INVENTORY\n\nq - QUIT\n");
+                            Console.WriteLine($"\n{x} , {y}\n");
+                            Console.WriteLine(position[0]);
+                            Console.WriteLine("");
+                        }
+
+                        break;
+
+                    case "q":
+
+                        Console.WriteLine("Are you sure you want to quit? (Y/N)");
+                        input = Console.ReadLine().ToLower();
+
+                        if (input == "y")
+                        {
+                            exit = true;
+                            Console.WriteLine("\nPress enter to continue\n");
+                        }
+
+                        else
+                        {
+                            input = "";
+                            Console.WriteLine("\nPress enter to continue\n");
+                        }
+
+                        break;
+
+                    case "i":
+                        DisplayInventory(inventory);
+                        break;
+
+                    default:
+
+                        CheckPosition(position, map, input, inventory);
+
+                        Console.Clear();
+
+                        Console.ForegroundColor = ConsoleColor.White;
+                        Console.WriteLine("\nn - NORTH\ns - SOUTH\ne - EAST\nw - WEST\n\ni - INVENTORY\n\nq - QUIT\n");
+                        Console.WriteLine($"\n{x} , {y}\n");
+                        Console.WriteLine(position[0]);
+                        Console.WriteLine("");
+
+
+                        break;
+                }
+
+                input = Console.ReadLine().ToLower();
+            }
+        }
+
+        public static void CheckPosition(int[] position, int[,] map, string input, string[] inventory)
+        {
+            bool enter = true;
+
+            while (enter == true)
+            {
+                if (position[0] == map[1, 3])
+                {
+                    Console.WriteLine("\nYou are entering the Volcano. Do you want to proceed? (Y/N)\n");
+                    input = Console.ReadLine().ToLower();
+
+                    if (input == "y")
+                    {
+                        Volcano();
+                    }
+
+                    else
+                    {
+                        enter = false;
+                    }
+                }
+
+                else if (position[0] == map[1, 1])
+                {
+                    Console.WriteLine("\nYou are entering the Desert. Do you want to proceed? (Y/N)\n");
+                    input = Console.ReadLine().ToLower();
+
+                    if (input == "y")
+                    {
+                        Desert();
+                    }
+
+                    else
+                    {
+                        enter = false;
+                    }
+                }
+
+                else if (position[0] == map[3, 1])
+                {
+                    Console.WriteLine("\nYou are entering the Mountains. Do you want to proceed? (Y/N)\n");
+                    input = Console.ReadLine().ToLower();
+
+                    if (input == "y")
+                    {
+                        Mountain();
+                    }
+
+                    else
+                    {
+                        enter = false;
+                    }
+                }
+
+                else if (position[0] == map[3, 2])
+                {
+                    Console.WriteLine("\nYou are entering the Forest. Do you want to proceed? (Y/N)\n");
+                    input = Console.ReadLine().ToLower();
+
+                    if (input == "y")
+                    {
+                        Forest();
+                    }
+
+                    else
+                    {
+                        enter = false;
+                    }
+                }
+
+                else if (position[0] == map[3, 3])
+                {
+                    Console.WriteLine("\nYou are entering the Castle. Do you want to proceed? (Y/N)\n");
+                    input = Console.ReadLine().ToLower();
+
+                    if (input == "y")
+                    {
+                        Castle();
+                    }
+
+                    else
+                    {
+                        enter = false;
+                    }
+                }
+
+                else
+                {
+                    break;
+                }
+            }
+        }
+
+        public static void DisplayInventory(string[] inventory)
+        {
+            for (int i = 0; i < inventory.Length; i++)
+            {
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine(inventory[i]);
+            }
+        }
+
+        public static void Inventory(string[] inventory, string item)
+        {
+            string replace = "", drop = "";
+            bool empty = true;
+
+            for (int i = 0; i < inventory.Length; i++)
+            {
+                empty = true;
+
+                if (inventory[i].Contains("Empty"))
+                {
+                    inventory[i] = item;
+                    empty = false;
+                    break;
+                }
+            }
+
+            if (empty == true)
+            {
+                Console.WriteLine("\nYour inventory is full, do you want to drop something?\n");
+                drop = Console.ReadLine();
+
+                if (drop == "y")
+                {
+                    Console.Clear();
+                    DisplayInventory(inventory);
+                    Console.Write("\n\nPlease take a look at your inventory above decide what you want to replace\n\nItem to swap: ");
+                    replace = Console.ReadLine();
+                }
+
+                for (int i = 0; i < inventory.Length; i++)
+                {
+                    if (replace.ToLower() == inventory[i].ToLower())
+                    {
+                        inventory[i] = item;
+                        break;
+                    }
+                }
+
+                Console.Clear();
+
+                DisplayInventory(inventory);
+            }
+
+            Console.WriteLine("\nPress enter to continue\n");
+            Console.ReadLine();
+        }
     }   
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-
