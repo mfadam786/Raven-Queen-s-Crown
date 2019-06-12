@@ -502,16 +502,29 @@ namespace Raven_Queens_Crown
                 Console.WriteLine("You chose correctly! You have reached the volcano.");
                 Console.WriteLine("you cross the bridge and you see a path that leads to a ricketty shack.");
                 Console.WriteLine("[ENTER]");
-                Console.ReadLine();
+                //Console.ReadLine();
                 Console.Write("Do you approach the scack");
                 string shack = Console.ReadLine();
-                if (shack.ToLower() == "yes")
+                bool enterShack = false;
+                if (shack.ToLower() == "no")
                 {
-                    Console.WriteLine("enter shack");
+                    enterShack = false;
                 }
-                else
+                while (enterShack == false)
                 {
-                    Console.WriteLine("Isnt this your only Lead?");
+
+                    if (shack.ToLower() == "no")
+                    {
+                        Console.WriteLine("Isnt this your only Lead?");
+                        Console.Write("Do you approach the scack: ");
+                        shack = Console.ReadLine();
+
+                    }
+                    else
+                    {
+                        Console.WriteLine("enter shack");
+                        enterShack = true;
+                    }
                 }
             }
 
