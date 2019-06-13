@@ -13,9 +13,9 @@ namespace Raven_Queens_Crown
         {
             string[] inventory = new string[5] { "Empty", "Empty", "Empty", "Empty", "Empty" };
 
-            //Intro();
-           // Mountain();
-            //Game(inventory);
+            Intro();
+
+            Game(inventory);
         }
 
 
@@ -117,134 +117,49 @@ namespace Raven_Queens_Crown
         public static void Mountain()
         {
 
-            string temp, temp1;
-            bool Apple = false;
-            bool Rabbit = false;
-            bool Bow = false;
-
-            //Console.WriteLine("Welcome to the Mountain, there have two way can reach the top. One is follow the sighn next the road that is easy one but will take more time. Another one is through the cave which is danger than the normal road, however, it will save time.");
-            //Console.WriteLine("Choose the Road or Cave?");
-            //temp = Console.ReadLine();
-
-            do
-            {
-                do
-                {
-                    Console.WriteLine("You are enter the mountain, a lot of fruit tree next the road, do you want to get something?(Yes or No)");
-                    temp = Console.ReadLine();
-                    if (temp == "Yes")
-                    {
-                        Console.WriteLine("You got three apples.");
-                        Apple = true;
-                        Thread.Sleep(500);
-                    }
-                    else
-                    {
-                        Apple = false;
-                    }
-
-                    Console.WriteLine("You saw some rabbit on the front, do you want catch them?(Yes or No)");
-                    temp = Console.ReadLine();
-                    Thread.Sleep(500);
-                    if (temp == "Yes")
-                    {
-                        Console.WriteLine("What item can be used as bait?");
-                        temp1 = Console.ReadLine();
-                        Thread.Sleep(500);
-                        if (temp1 != "Apple")
-                        {
-                            Console.WriteLine("The Rabbit run away.");
-                            Thread.Sleep(500);
-                        }
-                        else
-                        {
-                            if ((temp1 == "Apple") && (Apple == true))
-                            {
-                                Console.WriteLine("You spent two apples and got a rabbit.");
-                                Thread.Sleep(500);
-                                Rabbit = true;
-                            }
-                            else
-                            {
-                                Console.WriteLine("You do not have any apple");
-                                Thread.Sleep(500);
-                            }
-                        }
-                    }
-
-                    Console.WriteLine("You keep move to the top of mountain, there have a house right side of the road.");
-                    Console.WriteLine("The house look like a lone time no one live, do you want go in the house?(Yes or No)");
-                    temp = Console.ReadLine();
-                    while (temp == "No")
-                    {
-                        Console.WriteLine("However, the sky are truning to drak, sleep outside is no safe.");
-                        Console.WriteLine("Do you want go in the house?");
-                        temp1 = Console.ReadLine();
-                        if (temp1 == "Yes")
-                        {
-                            break;
-                        }
-                    }
-
-                    Console.WriteLine("You sit on a chair and saw a note on the table 'be careful the tiger, do not fight it face to face, use bow and arrow'.");
-                    Thread.Sleep(500);
-                    Console.WriteLine("Sounds like have weapons in the house, do you want to search the house?(Yes or No)");
-                    temp = Console.ReadLine();
-                    Thread.Sleep(500);
-                    if (temp == "Yes")
-                    {
-                        Console.WriteLine("You found a bow and some arrow under the bed.");
-                        Bow = false;
-                        Thread.Sleep(500);
-                    }
-                    Console.WriteLine("You stay one night in here.");
-                    Thread.Sleep(500);
 
 
-                    Console.WriteLine("You know 'The majority of these zzz's happen during the day, because tigers in the wild do most of their prowling at night, aided by night vision that's six times better than humans'. So you need to make a trap at the day time then can catch the tiger of prowling at night, hopefully.");
-                    Thread.Sleep(500);
-                    Console.WriteLine("Check the weapon and other item need to use.");
-                    Console.WriteLine("Perpare enough to move forward or go back?(Yes or No)");
-                    Thread.Sleep(500);
-                    temp = Console.ReadLine();
 
-                } while (temp != "Yes");
 
-                Console.WriteLine("You found a hole which have enough room to snare the tiger, one more thing need to do is put some bait on the hole.");
-                Console.WriteLine("What item can bu used as bait?");
-                temp = Console.ReadLine();
-                Thread.Sleep(500);
-                if (temp == "Rabbit")
-                {
-                    Console.WriteLine("All done, waiting for the tiger coming...");
-                    Thread.Sleep(500);
-                }
 
-                Console.WriteLine("...");
-                Thread.Sleep(500);
-                Console.WriteLine("...");
-                Thread.Sleep(500);
-                Console.WriteLine("...");
-                Thread.Sleep(500);
 
-                Console.WriteLine("The tiger drop in the hole, you can kill it now.");
-                Console.WriteLine("Which weapons you can use?");
-                Console.WriteLine("Choose correct weapon to kill to or go to somewhere to find a weapon");
-                temp = Console.ReadLine();
-                Thread.Sleep(500);
-                if (temp == "Bow")
-                {
-                    Console.WriteLine("You killed the tiger");
 
-                }
 
-            } while (temp != "Bow");
 
-            Console.WriteLine("right");
-            Console.WriteLine("You killed the tiger");
-            temp = Console.ReadLine();
-            Console.WriteLine("Finish");
-            Console.ReadLine();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         }
 
@@ -541,8 +456,6 @@ namespace Raven_Queens_Crown
 
             ////Console.WriteLine(sentence.TrimEnd());*/
             //Console.ReadLine();
-
-
             string path;
             int death=0;
             Console.Clear();
@@ -1025,8 +938,6 @@ namespace Raven_Queens_Crown
 
             Console.WriteLine("\nPress enter to continue\n");
             Console.ReadLine();
-
-            
         }
     }
 }    
