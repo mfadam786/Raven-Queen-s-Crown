@@ -13,26 +13,27 @@ namespace Raven_Queens_Crown
         {
             string[] inventory = new string[5] { "Empty", "Empty", "Empty", "Empty", "Empty" };
 
-            Intro();
 
+            Intro();   
             Game(inventory);
         }
 
 
         public static void Intro()
         {
-            /*Console.WriteLine("You are standing in a busy street in *Base Point*, you must find The Raven Queens Crown. To travel north to the volcano to the press \'n\' To check the Mountain in the west press \'w' " +
-            "To search the southern forest press \'s\' To plunder the eastern castle press \'e\' ");*/
+            Console.WriteLine("Welcome Player 1\nYou are embarking on a quest to find the Raven Queens Crown. \nIt has been missing for days and the realm is in chaos.");
+            Console.WriteLine("\nTo the north is the volcano\'n\' To the west is the Mountain\n'w' " +
+            "\nTo the south is the forest press \'s\' To the east is the castle press \'e\' ");           
 
-            Console.WriteLine("\nYou are standing in a busy street in *Base Point*, you must find The Raven Queens Crown.\n");
+      
         }
 
         public static void Forest()
         {
             Console.WriteLine($"You are on the edge of Barewood Forrest.\n");
 
-            //Console.WriteLine($"In the distance you see a slight movment.");
-            //Console.ReadLine();
+            Console.WriteLine($"In the distance you see a slight movment.");
+            Console.ReadLine();
 
             Console.WriteLine($"Do you enter the forrest");
             string enterForrest = Console.ReadLine();
@@ -168,253 +169,85 @@ namespace Raven_Queens_Crown
 
             //Objective of the game is to find the crown
 
-            Console.WriteLine("You have reached the outskirts of a Castle. /nDo you want to a)Explore the castle in search of the crown /nb)Search the grounds");
+            Console.WriteLine("You have reached the castle, do you wish to enter? Yes/No");
             char outskirts = Convert.ToChar(Console.ReadLine());
+            
 
-            if (outskirts == 'a')
+            if (outskirts == 'Y')
             {
                 Console.WriteLine("You enter the Castle " +
-                    "it is dark inside to your left is a torch to grab the torch press \'t\' to ignore the torch and carry on walking press \'w\'");
-                char torch = Convert.ToChar(Console.ReadLine());
+                    "it is dark inside to your left is a flaming torch, do you wish to pick up the torch? Yes/No");
+                char torch = Convert.ToChar(Console.ReadLine().ToLower());
 
-                if (torch == 'b')
+                if (torch == 'Y')
                 {
-                    Console.WriteLine("You picked up the torch");
+                    Console.WriteLine("You accidentaly graze some fluffy cobwebs,\nThe room you're in starts to burn");
+                    Console.WriteLine("You try to flee but are engulfed in flames\n You die");
+
+
+
                 }
                 else
                 {
-                    Console.WriteLine("To your left is staircase that leads down to what looks like a celler, to your right is a staircase that leads upwards");
-                    Console.WriteLine("Do you want to /na) Walk down the stairs to the celler /nb)Walks up the stairs");
-                }
+                    Console.WriteLine("To your left is staircase that leads down to what looks like a celler. Do you want to explore the celler? Yes/No");
+                    string celler = Console.ReadLine();
 
-                Console.WriteLine("\nTo your left are some poison darts to pick them up press \'p\'");
-                string poison = Console.ReadLine();
 
-                if (poison == "p")
-                {
-                    string inventory = poison;
-                    Console.WriteLine("You pick up the poison darts, they are now added to your inventory, to throw press \'p\'");
-                }
+                    if (celler == "Yes")
+                    {
+                        Console.WriteLine("\nTo your left are some poison darts, do you want to pick them up? Yes/No'");
+                        string poison = Console.ReadLine();
 
-                //if user moves forward
-                Console.WriteLine("A cat bounds forward");
-                char cat = Convert.ToChar(Console.ReadLine());
-                if (cat == 'p')
-                {
-                    Console.WriteLine("You threw poison darts at the cat, its a direct hit");
-                    Console.ReadLine();
+                        if (poison == "Yes")
+                        {
+                            string inventory = poison;
+                            Console.WriteLine("You pick up the poison darts");
+                           
+                            Console.WriteLine("A cat bounds forward, do you want to pat him? Yes/No");
+                            string cat = Console.ReadLine();
+                            if (cat == "Yes")
+                            {
+                                Console.WriteLine("He swips at your hand, he seems wary");
+                                Console.WriteLine("The cat speaks,");
+                                Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                                Console.WriteLine("There is no crown here, perhaps try the volcano");
+                                Console.ReadLine();                             
+                                Console.Clear();
+                                Main();
+
+                            }
+                            else
+                            {
+
+                                Console.WriteLine("The cat attacks and bites you killing you instantly");
+                                Console.ReadLine();                            
+                                Console.Clear();
+                                Main();
+                            }
+                        }
+                    }
+                    else if (celler == "No")
+                    {
+                        Console.WriteLine("You continue through the maze of hallways and come accross a dining hall");
+                        Console.WriteLine("After a quick search you decide to try a different area");
+                        Console.ReadLine();                      
+                        Console.Clear();
+                        Main();
+                    }
                 }
-                else
-                {
-                    Console.WriteLine("You died");
-                    Console.ReadLine();
-                }
+            
 
             }
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         }
 
-        public static void Desert()
+       /* public static void Desert()
         {
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        }
+        }*/
 
         public static void Volcano()
         {
@@ -475,7 +308,7 @@ namespace Raven_Queens_Crown
             if (path == "2")
             {
                 Console.Clear();
-                Console.WriteLine("**You Dye**\n[ENTER]");
+                Console.WriteLine("**You Die**\n[ENTER]");
                 Console.ReadLine();
                 death = death + 1;
                 Console.Clear();
@@ -485,7 +318,7 @@ namespace Raven_Queens_Crown
             if (path == "1")
             {
                 Console.Clear();
-                Console.WriteLine("**You Dye**\n[ENTER]");
+                Console.WriteLine("**You Die**\n[ENTER]");
                 Console.ReadLine();
                 death = death + 1;
                 Console.Clear();
@@ -496,9 +329,9 @@ namespace Raven_Queens_Crown
             {
                 Console.Clear();
                 Console.WriteLine("You chose correctly! You have reached the volcano.");
-                Console.WriteLine("you cross the bridge and you see a path that leads to a ricketty shack.\n");
+                Console.WriteLine("You cross the bridge and you see a path that leads to a ricketty shack.\n");
                 //Console.ReadLine();
-                Console.Write("Do you approach the scack");
+                Console.Write("Do you approach the shack?");
                 string shack = Console.ReadLine();
                 bool enterShack = false;
                 if (shack.ToLower() == "no")
@@ -515,7 +348,7 @@ namespace Raven_Queens_Crown
                     if (shack.ToLower() == "no")
                     {
                         Console.WriteLine("Isnt this your only Lead?");
-                        Console.Write("Do you approach the scack: ");
+                        Console.Write("Do you approach the shack: ");
                         shack = Console.ReadLine().ToLower();
 
                     }
@@ -815,21 +648,21 @@ namespace Raven_Queens_Crown
                     }
                 }
 
-                else if (position[0] == map[1, 1])
-                {
-                    Console.WriteLine("\nYou are entering the Desert. Do you want to proceed? (Y/N)\n");
-                    input = Console.ReadLine().ToLower();
+                //else if (position[0] == map[1, 1])
+                //{
+                //    Console.WriteLine("\nYou are entering the Desert. Do you want to proceed? (Y/N)\n");
+                //    input = Console.ReadLine().ToLower();
 
-                    if (input == "y")
-                    {
-                        Desert();
-                    }
+                //    if (input == "y")
+                //    {
+                //        Desert();
+                //    }
 
-                    else
-                    {
-                        enter = false;
-                    }
-                }
+                //    else
+                //    {
+                //        enter = false;
+                //    }
+                //}
 
                 else if (position[0] == map[3, 1])
                 {
