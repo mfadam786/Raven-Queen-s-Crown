@@ -535,7 +535,10 @@ namespace Raven_Queens_Crown
                     string invest = Console.ReadLine();
                     if (invest.ToLower() == "yes")
                     {
-                        Console.WriteLine("Investigate");
+                        Console.WriteLine("Investigate. You see a riffeled pices of paper on the desk.");
+                        Console.WriteLine("On the floor a gleam catches your eye, it is a pen.");
+                        Console.Write("Do you pick it up");
+                        string pickPen = Console.ReadLine();
                     }
                     else
                     {
