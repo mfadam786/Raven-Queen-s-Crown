@@ -9,11 +9,16 @@ namespace Raven_Queens_Crown
 {
     class Raven_Queens_Crown
     {
-        static void Main(string[] args)
+        static void Main()
         {
             string[] inventory = new string[5] { "Empty", "Empty", "Empty", "Empty", "Empty" };
 
+<<<<<<< HEAD
             Intro();         
+=======
+            Intro();
+
+>>>>>>> 13d992e902698c8c2dcb5ec0bb768d02781a8be3
             Game(inventory);
         }
 
@@ -118,199 +123,52 @@ namespace Raven_Queens_Crown
         public static void Mountain()
         {
 
-            string temp, temp1;
-            bool Apple = false;
-            bool Rabbit = false;
-            bool Bow = false;
-
-            //Console.WriteLine("Welcome to the Mountain, there have two way can reach the top. One is follow the sighn next the road that is easy one but will take more time. Another one is through the cave which is danger than the normal road, however, it will save time.");
-            //Console.WriteLine("Choose the Road or Cave?");
-            //temp = Console.ReadLine();
-
-            do
-            {
-                do
-                {
-                    Console.WriteLine("You are enter the mountain, a lot of fruit tree next the road, do you want to get something?(Yes or No)");
-                    temp = Console.ReadLine();
-                    if (temp == "Yes")
-                    {
-                        Console.WriteLine("You got three apples.");
-                        Apple = true;
-                        Thread.Sleep(500);
-                    }
-                    else
-                    {
-                        Apple = false;
-                    }
-
-                    Console.WriteLine("You saw some rabbit on the front, do you want catch them?(Yes or No)");
-                    temp = Console.ReadLine();
-                    Thread.Sleep(500);
-                    if (temp == "Yes")
-                    {
-                        Console.WriteLine("What item can be used as bait?");
-                        temp1 = Console.ReadLine();
-                        Thread.Sleep(500);
-                        if (temp1 != "Apple")
-                        {
-                            Console.WriteLine("The Rabbit run away.");
-                            Thread.Sleep(500);
-                        }
-                        else
-                        {
-                            if ((temp1 == "Apple") && (Apple == true))
-                            {
-                                Console.WriteLine("You spent two apples and got a rabbit.");
-                                Thread.Sleep(500);
-                                Rabbit = true;
-                            }
-                            else
-                            {
-                                Console.WriteLine("You do not have any apple");
-                                Thread.Sleep(500);
-                            }
-                        }
-                    }
-
-                    Console.WriteLine("You keep move to the top of mountain, there have a house right side of the road.");
-                    Console.WriteLine("The house look like a lone time no one live, do you want go in the house?(Yes or No)");
-                    temp = Console.ReadLine();
-                    while (temp == "No")
-                    {
-                        Console.WriteLine("However, the sky are truning to drak, sleep outside is no safe.");
-                        Console.WriteLine("Do you want go in the house?");
-                        temp1 = Console.ReadLine();
-                        if (temp1 == "Yes")
-                        {
-                            break;
-                        }
-                    }
-
-                    Console.WriteLine("You sit on a chair and saw a note on the table 'be careful the tiger, do not fight it face to face, use bow and arrow'.");
-                    Thread.Sleep(500);
-                    Console.WriteLine("Sounds like have weapons in the house, do you want to search the house?(Yes or No)");
-                    temp = Console.ReadLine();
-                    Thread.Sleep(500);
-                    if (temp == "Yes")
-                    {
-                        Console.WriteLine("You found a bow and some arrow under the bed.");
-                        Bow = false;
-                        Thread.Sleep(500);
-                    }
-                    Console.WriteLine("You stay one night in here.");
-                    Thread.Sleep(500);
 
 
-                    Console.WriteLine("You know 'The majority of these zzz's happen during the day, because tigers in the wild do most of their prowling at night, aided by night vision that's six times better than humans'. So you need to make a trap at the day time then can catch the tiger of prowling at night, hopefully.");
-                    Thread.Sleep(500);
-                    Console.WriteLine("Check the weapon and other item need to use.");
-                    Console.WriteLine("Perpare enough to move forward or go back?(Yes or No)");
-                    Thread.Sleep(500);
-                    temp = Console.ReadLine();
 
-                } while (temp != "Yes");
 
-                Console.WriteLine("You found a hole which have enough room to snare the tiger, one more thing need to do is put some bait on the hole.");
-                Console.WriteLine("What item can bu used as bait?");
-                temp = Console.ReadLine();
-                Thread.Sleep(500);
-                if (temp == "Rabbit")
-                {
-                    Console.WriteLine("All done, waiting for the tiger coming...");
-                    Thread.Sleep(500);
-                }
 
-                Console.WriteLine("...");
-                Thread.Sleep(500);
-                Console.WriteLine("...");
-                Thread.Sleep(500);
-                Console.WriteLine("...");
-                Thread.Sleep(500);
 
-                Console.WriteLine("The tiger drop in the hole, you can kill it now.");
-                Console.WriteLine("Which weapons you can use?");
-                Console.WriteLine("Choose correct weapon to kill to or go to somewhere to find a weapon");
-                temp = Console.ReadLine();
-                Thread.Sleep(500);
-                if (temp == "Bow")
-                {
-                    Console.WriteLine("You killed the tiger");
 
-                }
 
-            } while (temp != "Bow");
 
-            Console.WriteLine("right");
-            Console.WriteLine("You killed the tiger");
-            temp = Console.ReadLine();
-            Console.WriteLine("Finish");
-            Console.ReadLine();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         }
 
-        public static void Castle()
-        {
-
-            //Objective of the game is to find the crown
-
-            Console.WriteLine("You have reached the castle, do you wish to enter? Yes/No");
-            char outskirts = Convert.ToChar(Console.ReadLine());
-            
-
-            if (outskirts == 'Y')
-            {
-                Console.WriteLine("You enter the Castle " +
-                    "it is dark inside to your left is a flaming torch, do you wish to pick up the torch? Yes/No");
-                char torch = Convert.ToChar(Console.ReadLine().ToLower());
-
-                if (torch == 'Y')
-                {
-                    Console.WriteLine("You accidentaly graze some fluffy cobwebs,\nThe room you're in starts to burn");
-                    Console.WriteLine("You try to flee but are engulfed in flames\n You die");
-
-
-
-                }
-                else
-                {
-                    Console.WriteLine("To your left is staircase that leads down to what looks like a celler. Do you want to explore the celler? Yes/No");
-                    string celler = Console.ReadLine();
-
-
-                    if (celler == "Yes")
-                    {
-                        Console.WriteLine("\nTo your left are some poison darts, do you want to pick them up? Yes/No'");
-                        string poison = Console.ReadLine();
-
-                        if (poison == "Yes")
-                        {
-                            string inventory = poison;
-                            Console.WriteLine("You pick up the poison darts");
-                           
-                            Console.WriteLine("A cat bounds forward, do you want to pat him? Yes/No");
-                            char cat = Convert.ToChar(Console.ReadLine());
-                            if (cat == "")
-                            {
-                                Console.WriteLine("You threw poison darts at the cat, its a direct hit");
-                                Console.ReadLine();
-                            }
-                            else
-                            {
-                                Console.WriteLine("You died");
-                                //Call the main
-                                Console.ReadLine();
-                            }
-                        }
-                    }
-                    else if (celler == "No")
-                    {
-                        Console.WriteLine("You continue through the maze of hallways and come accross a dining hall");
-                    }
-                }
-            
-
-            }
 
 
 
@@ -556,25 +414,47 @@ namespace Raven_Queens_Crown
 
             ////Console.WriteLine(sentence.TrimEnd());*/
             //Console.ReadLine();
-
-
             string path;
-            Console.WriteLine("You have entered the volcano Territory");
-            Console.WriteLine("Infront of you there are 3 bridges conecting your land to an unknown location. As the ash from the volcano is blocking your view to the other side.");
-            Console.WriteLine("One of them has to lead to the volcano, right?!");
-            Console.WriteLine("The bridges look raggedy and old as the wood is slightly rotted. But the Iron linking them looks secure.");
+            int death=0;
+            Console.Clear();
+            Console.WriteLine("**You have entered the volcano Territory**\n");
+            Console.WriteLine("Infront of you there are 3 bridges conecting your land to an unknown location. \nAs the ash from the volcano is blocking your view to the other side.");
+            Console.WriteLine("One of them has to lead to the volcano, right?!\n[ENTER]");
+            Console.ReadLine();
+            Console.WriteLine("The bridges look raggedy and old as the wood is slightly rotted. But the Iron linking them looks secure.\n[ENTER]");
+            Console.ReadLine();
             Console.WriteLine("The bridge chooices are as followed: \nThe first one is at the far right, in the distance it seems to vear to the right.");
             Console.WriteLine("The Second is in the middle and also vears to the right");
-            Console.WriteLine("Where as the third bridge seems to be going straght towards the volcano.");
+            Console.WriteLine("Where as the third bridge seems to be going straght towards the volcano.\n[ENTER]");
             Console.ReadLine();
             Console.Write("Do you choose bridge 1, 2 or 3: ");
             path = Console.ReadLine();
 
+            if (path == "2")
+            {
+                Console.Clear();
+                Console.WriteLine("**You Dye**\n[ENTER]");
+                Console.ReadLine();
+                death = death + 1;
+                Console.Clear();
+                Main();
+            }
+
+            if (path == "1")
+            {
+                Console.Clear();
+                Console.WriteLine("**You Dye**\n[ENTER]");
+                Console.ReadLine();
+                death = death + 1;
+                Console.Clear();
+                Main();
+            }
+
             if (path == "3")
             {
+                Console.Clear();
                 Console.WriteLine("You chose correctly! You have reached the volcano.");
-                Console.WriteLine("you cross the bridge and you see a path that leads to a ricketty shack.");
-                Console.WriteLine("[ENTER]");
+                Console.WriteLine("you cross the bridge and you see a path that leads to a ricketty shack.\n");
                 //Console.ReadLine();
                 Console.Write("Do you approach the scack");
                 string shack = Console.ReadLine();
@@ -583,6 +463,10 @@ namespace Raven_Queens_Crown
                 {
                     enterShack = false;
                 }
+                else
+                {
+                    enterShack = true;
+                }
                 while (enterShack == false)
                 {
 
@@ -590,25 +474,38 @@ namespace Raven_Queens_Crown
                     {
                         Console.WriteLine("Isnt this your only Lead?");
                         Console.Write("Do you approach the scack: ");
-                        shack = Console.ReadLine();
+                        shack = Console.ReadLine().ToLower();
 
                     }
                     else
                     {
-                        Console.WriteLine("enter shack");
-                        enterShack = true;
+                        Console.WriteLine("So you are just quitting?");
+                        
                     }
                 }
-            }
 
-            if (path == "2")
-            {
-                Console.WriteLine("You Dye");
-            }
-
-            if (path == "1")
-            {
-                Console.WriteLine("You Dye");
+                if(enterShack == true)
+                {
+                    Console.WriteLine("enter shack");
+                    enterShack = true;
+                    Console.WriteLine("Inside you see a quaint set up. With only a couple pieces of furniture. A single bed and desk.\n");
+                    Console.Write("Do you investigate?: ");
+                    string invest = Console.ReadLine();
+                    if (invest.ToLower() == "yes")
+                    {
+                        Console.WriteLine("Investigate");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Okay, you can just stand there.");
+                        Console.Write("Do you leave the shack then?: ");
+                        string leaveShack = Console.ReadLine();
+                        if (leaveShack.ToLower() == "yes")
+                        {
+                            enterShack = false;
+                        }
+                    }
+                }
             }
             Console.ReadLine();
 
@@ -999,8 +896,6 @@ namespace Raven_Queens_Crown
 
             Console.WriteLine("\nPress enter to continue\n");
             Console.ReadLine();
-
-            
         }
     }
 }    
