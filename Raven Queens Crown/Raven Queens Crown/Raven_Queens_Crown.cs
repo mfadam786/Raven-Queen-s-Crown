@@ -9,7 +9,7 @@ namespace Raven_Queens_Crown
 {
     class Raven_Queens_Crown
     {
-        static void Main(string[] args)
+        static void Main()
         {
             string[] inventory = new string[5] { "Empty", "Empty", "Empty", "Empty", "Empty" };
 
@@ -459,22 +459,46 @@ namespace Raven_Queens_Crown
 
 
             string path;
-            Console.WriteLine("You have entered the volcano Territory");
-            Console.WriteLine("Infront of you there are 3 bridges conecting your land to an unknown location. As the ash from the volcano is blocking your view to the other side.");
-            Console.WriteLine("One of them has to lead to the volcano, right?!");
-            Console.WriteLine("The bridges look raggedy and old as the wood is slightly rotted. But the Iron linking them looks secure.");
+            int death=0;
+            Console.Clear();
+            Console.WriteLine("**You have entered the volcano Territory**\n");
+            Console.WriteLine("Infront of you there are 3 bridges conecting your land to an unknown location. \nAs the ash from the volcano is blocking your view to the other side.");
+            Console.WriteLine("One of them has to lead to the volcano, right?!\n[ENTER]");
+            Console.ReadLine();
+            Console.WriteLine("The bridges look raggedy and old as the wood is slightly rotted. But the Iron linking them looks secure.\n[ENTER]");
+            Console.ReadLine();
             Console.WriteLine("The bridge chooices are as followed: \nThe first one is at the far right, in the distance it seems to vear to the right.");
             Console.WriteLine("The Second is in the middle and also vears to the right");
-            Console.WriteLine("Where as the third bridge seems to be going straght towards the volcano.");
+            Console.WriteLine("Where as the third bridge seems to be going straght towards the volcano.\n[ENTER]");
             Console.ReadLine();
             Console.Write("Do you choose bridge 1, 2 or 3: ");
             path = Console.ReadLine();
 
+            if (path == "2")
+            {
+                Console.Clear();
+                Console.WriteLine("**You Dye**\n[ENTER]");
+                Console.ReadLine();
+                death = death + 1;
+                Console.Clear();
+                Main();
+            }
+
+            if (path == "1")
+            {
+                Console.Clear();
+                Console.WriteLine("**You Dye**\n[ENTER]");
+                Console.ReadLine();
+                death = death + 1;
+                Console.Clear();
+                Main();
+            }
+
             if (path == "3")
             {
+                Console.Clear();
                 Console.WriteLine("You chose correctly! You have reached the volcano.");
-                Console.WriteLine("you cross the bridge and you see a path that leads to a ricketty shack.");
-                Console.WriteLine("[ENTER]");
+                Console.WriteLine("you cross the bridge and you see a path that leads to a ricketty shack.\n");
                 //Console.ReadLine();
                 Console.Write("Do you approach the scack");
                 string shack = Console.ReadLine();
@@ -483,6 +507,10 @@ namespace Raven_Queens_Crown
                 {
                     enterShack = false;
                 }
+                else
+                {
+                    enterShack = true;
+                }
                 while (enterShack == false)
                 {
 
@@ -490,25 +518,38 @@ namespace Raven_Queens_Crown
                     {
                         Console.WriteLine("Isnt this your only Lead?");
                         Console.Write("Do you approach the scack: ");
-                        shack = Console.ReadLine();
+                        shack = Console.ReadLine().ToLower();
 
                     }
                     else
                     {
-                        Console.WriteLine("enter shack");
-                        enterShack = true;
+                        Console.WriteLine("So you are just quitting?");
+                        
                     }
                 }
-            }
 
-            if (path == "2")
-            {
-                Console.WriteLine("You Dye");
-            }
-
-            if (path == "1")
-            {
-                Console.WriteLine("You Dye");
+                if(enterShack == true)
+                {
+                    Console.WriteLine("enter shack");
+                    enterShack = true;
+                    Console.WriteLine("Inside you see a quaint set up. With only a couple pieces of furniture. A single bed and desk.\n");
+                    Console.Write("Do you investigate?: ");
+                    string invest = Console.ReadLine();
+                    if (invest.ToLower() == "yes")
+                    {
+                        Console.WriteLine("Investigate");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Okay, you can just stand there.");
+                        Console.Write("Do you leave the shack then?: ");
+                        string leaveShack = Console.ReadLine();
+                        if (leaveShack.ToLower() == "yes")
+                        {
+                            enterShack = false;
+                        }
+                    }
+                }
             }
             Console.ReadLine();
 
