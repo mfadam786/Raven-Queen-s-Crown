@@ -327,11 +327,110 @@ namespace Raven_Queens_Crown
 
         }
 
-       /* public static void Desert()
+        public static void Desert()
         {
 
 
-        }*/
+            Console.Clear();
+            string path;
+            Console.Clear();
+            Console.WriteLine("**You have entered the Desert**\n");
+            Console.WriteLine("You have walked for miles and the first thing you see is a sign in the distance.");
+            Console.WriteLine("You approached the sign  \n[ENTER]");
+            Console.ReadLine();
+
+            Console.WriteLine("The sign is pointing in 3 directions but there is no trail to follow\nYou tried to read the signs but the writing has been sandblasted off.\nfeeling thirsty try to take a drink from your water bottle.\nYou realize your water reserves a extremely low and need to fill up your water bottle.\n[ENTER]");
+            Console.ReadLine();
+
+            Console.WriteLine("you decide to run in a direction that the sign is pointing to find water\n");
+            Console.WriteLine("[1] Left\n[2] Straight\n[3] right");
+            Console.WriteLine("\n[ENTER]");
+            Console.ReadLine();
+            Console.Write("Do you choose Direction 1, 2 or 3: ");
+            path = Console.ReadLine();
+
+            if (path == "2")
+            {
+                Console.Clear();
+                Console.WriteLine("The hot temperatures got to you and died from Heatstroke.");
+                Death();
+            }
+
+            if (path == "1")
+            {
+                Console.Clear();
+                Console.WriteLine("You ran out of water and died of Dehydration.");
+                Death();
+            }
+
+            if (path == "3")
+            {
+                Console.Clear();
+                Console.WriteLine("after walking around for miles you come across an oasis");
+                //Console.ReadLine();
+                Console.Write("Do you approach the oasis?[yes] [no]");
+                string shack = Console.ReadLine();
+                if (shack.ToLower() == "no")
+                {
+                    Console.WriteLine("Are you sure? you are on your last drop of water");
+                    Console.Write("Do you approach the oasis?:[yes] [no] ");
+                    shack = Console.ReadLine().ToLower();
+                    if (shack == "no")
+                    {
+                        Console.Clear();
+                        Console.WriteLine("You ran out of water and died of Dehydration.");
+                        Death();
+                    }
+
+                }
+                else
+                {
+                        string action;
+
+                        Console.WriteLine("when you approch the oasis to take drink you hear a noise\n \nA Snake has appeared\n and is ready to fight");
+                        Console.WriteLine("You have 3 options\n [1]Run\n [2]Fight\n [3]Trap");
+                        action = Console.ReadLine();
+                        if (action == "1")
+                        {
+                            Console.WriteLine("You run away and continue on your journey\n[ENTER]");
+                        }
+                        else
+                        {
+                            if (action == "2")
+                            {
+                                Console.WriteLine("You kill the snake and cut off its head as a trophy\n[ENTER]");
+                            }
+                            else
+                            {
+                                if (action == "3")
+                                {
+                                    Console.WriteLine("You have nothing to trap the snake with./n");
+                                    Console.WriteLine("lead to the snake biting you and dying from your wounds.");
+                                    Death();
+                                }
+                                else
+                                {
+                                    Console.WriteLine("your indecision lead to the snake biting you and dying from your wounds.");
+                                    Death();
+                                }
+                            }
+                        }
+                }
+            }
+
+            Console.ReadLine();
+
+
+        }
+
+        public static void Death()
+        {
+            Console.WriteLine("**You Died**\n[ENTER]");
+            Console.ReadLine();
+            Console.Clear();
+            Main();
+        }
+
 
         public static void Volcano()
         {
@@ -732,21 +831,21 @@ namespace Raven_Queens_Crown
                     }
                 }
 
-                //else if (position[0] == map[1, 1])
-                //{
-                //    Console.WriteLine("\nYou are entering the Desert. Do you want to proceed? (Y/N)\n");
-                //    input = Console.ReadLine().ToLower();
+                /*else if (position[0] == map[1, 1])
+                {
+                    Console.WriteLine("\nYou are entering the Desert. Do you want to proceed? (Y/N)\n");
+                    input = Console.ReadLine().ToLower();
 
-                //    if (input == "y")
-                //    {
-                //        Desert();
-                //    }
+                    if (input == "y")
+                    {
+                        Desert();
+                    }
 
-                //    else
-                //    {
-                //        enter = false;
-                //    }
-                //}
+                    else
+                    {
+                        enter = false;
+                    }
+                }*/
 
                 else if (position[0] == map[3, 1])
                 {
